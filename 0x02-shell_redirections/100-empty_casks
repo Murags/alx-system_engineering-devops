@@ -1,2 +1,2 @@
 #!/bin/bash
-find ./ -type df -not -empty | ls -1
+find ./ -type df -not -empty | ls -1aR
