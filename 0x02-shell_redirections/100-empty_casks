@@ -1,2 +1,2 @@
 #!/bin/bash
-find ./ -type df -not -empty | ls -1aR
+find ./ -type d,f -empty -iname ".*" -ls -1
