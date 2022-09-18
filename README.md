@@ -1,2 +1,4 @@
-#This is shell basics
-| Task | Description|
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
