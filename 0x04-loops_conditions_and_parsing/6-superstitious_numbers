@@ -10,7 +10,7 @@ do
 			;;
 
 		"9")
-			echo "bad luck form Japan"
+			echo "bad luck from Japan"
 			;;
 
 		"17")
