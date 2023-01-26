@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script is displaying file status
+if [[ -e ./school ]];then
+	echo "school file exists"
+	if [[ -s ./school ]];then
+		echo "school file is not empty"
+	else
+		echo "School file is empty"
+	fi
+	if [[ -f ./school ]];then
+		echo "school file is regular"
+	fi
+else
+	echo "school does not exist"
+fi
