@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#displays "To infinity and beyond" indefinetly
+function invincible(){
+	echo "I am Invincible"
+}
+
+trap invincible SIGTERM
+while true;do
+	echo "To infinity and beyond"
+	sleep 2
+done
