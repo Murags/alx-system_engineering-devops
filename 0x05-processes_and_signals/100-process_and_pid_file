@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#creates a file and cancels process
+echo $$ > /var/run/myscript.pid
+
+function hate()
+{
+	echo "I hate the kill command"
+	sudo rm /var/run/myscript.pid
+	exit()
+}
+function no_love()
+{
+	echo "Y U no love me?!"
+}
+function quit()
+{
+	sudo rm /var/run/myscript.pid
+	exit()
+}
+trap no_love SIGINT
+trap quit SIGQUIT
+trap hate SIGTERM
+
+while true;do
+	echo "To infinity and beyond"
+done
