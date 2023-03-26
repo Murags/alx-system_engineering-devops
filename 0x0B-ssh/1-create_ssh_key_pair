@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+#generates ssh key pair
+
+ssh-keygen -b 4096 -P betty -f school
