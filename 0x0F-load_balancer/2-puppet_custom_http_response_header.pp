@@ -4,15 +4,11 @@ exec { 'Install Nginx':
   path    => ['/usr/bin', '/bin'],
 }
 
-file { '/var/www/html/index.html':
-  content => 'Hello World!',
-}
-
-file_line { 'redirect':
+file_line { 'Add_header':
   ensure   => present,
   path     => '/etc/nginx/sites-available/default',
   after    => 'listen 80 default_server;',
-  line     => 'add_header X-Served-By $hostname;',
+  line     => '        add_header X-Served-By $hostname;',
   multiple => true
 }
 
