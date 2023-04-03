@@ -4,12 +4,9 @@ exec { 'Install Nginx':
   path    => ['/usr/bin', '/bin'],
 }
 
-file_line { 'add_header':
-  ensure   => present,
-  path     => '/etc/nginx/sites-available/default',
-  line     => '        add_header X-Served-By $hostname;',
-  match    => '^(\s*)server_name\s+_;$',
-  after    => 'server_name _;',
+exec { 'config':
+  command  => 'sudo sed -i \'/listen 80 default_server;/ a \\t add_header X-Served-By $hostname;\' /etc/nginx/sites-available/default',
+  provider => 'shell',
 }
 
 exec { 'Restart':
