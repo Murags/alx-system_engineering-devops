@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# custom http response header on new ubuntu machine
+sudo apt -y update
+sudo apt -y install nginx
+sudo sed -i '/listen 80 default_server;/ a \\t add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+sudo service nginx restart
