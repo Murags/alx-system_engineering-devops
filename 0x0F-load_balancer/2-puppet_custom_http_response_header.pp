@@ -1,7 +1,12 @@
 # Install Nginx web server and configure nginx
+exec { 'update':
+  command  => 'sudo apt -y update',
+  provider => 'shell',
+}
+
 exec { 'Install Nginx':
-  command => 'sudo apt -y install nginx',
-  path    => ['/usr/bin', '/bin'],
+  command  => 'sudo apt -y install nginx',
+  provider => 'shell',
 }
 
 exec { 'config':
