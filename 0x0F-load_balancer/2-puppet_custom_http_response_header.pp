@@ -8,8 +8,8 @@ file_line { 'Add_header':
   ensure   => present,
   path     => '/etc/nginx/sites-available/default',
   after    => 'listen 80 default_server;',
-  line     => '        add_header X-Served-By $hostname;',
-  multiple => true
+  line     => 'add_header X-Served-By $hostname;',
+  multiple => true,
 }
 
 exec { 'Restart':
