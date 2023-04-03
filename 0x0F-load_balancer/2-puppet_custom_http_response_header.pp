@@ -4,12 +4,12 @@ exec { 'Install Nginx':
   path    => ['/usr/bin', '/bin'],
 }
 
-file_line { 'Add_header':
+file_line { 'add_header':
   ensure   => present,
   path     => '/etc/nginx/sites-available/default',
-  after    => 'listen 80 default_server;',
-  line     => 'add_header X-Served-By $hostname;',
-  multiple => true,
+  line     => '        add_header X-Served-By $hostname;',
+  match    => '^(\s*)server_name\s+_;$',
+  after    => 'server_name _;',
 }
 
 exec { 'Restart':
