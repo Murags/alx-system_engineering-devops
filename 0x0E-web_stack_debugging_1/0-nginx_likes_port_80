@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# installs nginx
-sudo apt -y update
-sudo apt -y install nginx
+# reconfigures nginx
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 sudo service nginx start
