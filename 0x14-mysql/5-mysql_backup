@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# this script creates a backup file and archive
 
 Date=$(date +%d-%m-%Y)
 archive_file="$Date.tar.gz"
