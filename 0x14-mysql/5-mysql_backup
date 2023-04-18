@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+Date=$(date +%d-%m-%Y)
+archive_file="$Date.tar.gz"
+
+mysqldump -u root -p"$1" --all-databases > "backup.sql"
+
+tar -czf "$archive_file" "backup.sql"
