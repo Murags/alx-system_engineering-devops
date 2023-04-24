@@ -17,7 +17,6 @@ def main():
     with open(filename, "w", newline='') as csvfile:
         for task in task_res.json():
             if task.get("userId") == int(argv[1]):
-                if task.get("completed"):
                     writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
                     writer.writerow([argv[1], employee_name, task.get(
                         "completed"), task.get("title")])
