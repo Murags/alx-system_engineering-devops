@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """Script that exctracts data from an api
     """
-from sys import argv
+
 from requests import get
+from sys import argv
 
 
 def main():
