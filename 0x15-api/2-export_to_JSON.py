@@ -19,7 +19,6 @@ def main():
         task_list = []
         temp = {}
         for task in task_res.json():
-            print(task.get("completed"))
             if task.get("userId") == int(argv[1]):
                 temp["task"] = task.get("title")
                 temp["completed"] = task.get("completed")
