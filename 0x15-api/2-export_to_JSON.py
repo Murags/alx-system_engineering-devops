@@ -17,9 +17,9 @@ def main():
     with open(filename, "w") as f:
         final_dict = {}
         task_list = []
-        temp = {}
         for task in task_res.json():
             if task.get("userId") == int(argv[1]):
+                temp = {}
                 temp["task"] = task.get("title")
                 temp["completed"] = task.get("completed")
                 temp["username"] = employee_name
