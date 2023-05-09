@@ -16,7 +16,7 @@ def count_words(subreddit, word_list, params={}, hot_list=[], counter=0):
         for word in word_list:
             appearance = 0
             for title in hot_list:
-                appearance += title.count(word)
+                appearance += title.upper().count(word.upper())
             if appearance != 0:
                 print("{}: {}".format(word, appearance))
         return
